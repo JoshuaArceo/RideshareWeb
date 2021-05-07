@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Carpool Wall</title>
+  <link rel="stylesheet" href="homeWall.css">
+
+<!--  <link rel="stylesheet" href="dropdownFooter.css">-->
+
+  <script
+          src="https://code.jquery.com/jquery-3.5.1.js"
+          integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+          crossorigin="anonymous"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-database.js"></script>
+  <meta name="google-signin-scope" content="profile email">
+  <meta name="google-signin-client_id" content="859063326524-i104bft5cv439l78ic5j5dhpvopjblem.apps.googleusercontent.com">
+  <script async
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCaq0QVFuOH7TU9vsabSOf8FQkCN2wASo&libraries=distance_matrix,places">
+  </script>
+
+  <script src = "config.js"></script>
+
+  <script src="dropdownFooter.js"></script>
+
+  <script src="homeWall.js">
+  </script>
+  <script>
+    console.log(localStorage["id"])
+    console.log(localStorage["name"])
+    console.log(localStorage["email"])
+    if(localStorage["id"] && localStorage["name"] && localStorage["email"]) {
+    }else{
+      window.open ('index.html','_self');
+    }
+  </script>
+</head>
+<body>
+<!--  <h1>Carpool</h1>-->
+  <div class="postRequest">
+    <a>Post Type:</a><select id="requestType" onchange="setType()"></select>
+    <a>Time:</a><input type="time" id="timeSelect"
+                       min="05:00" max="21:00">
+    <a class="canDrive">Available Seats:</a><select class="canDrive" id="seatsDrop"></select>
+    <br>
+    <textarea id="postText"></textarea>
+    <button onclick="post()">Post</button>
+  </div>
+
+  <a>Sort By:</a>
+  <select class='sortByDrop'>
+    <option>Time:Newest</option>
+    <option>Time:Oldest</option>
+    <option>Location:Closest</option>
+    <option>Location:Farthest</option>
+  </select>
+
+  <div id="wallRequests"></div>
+
+
+
+
+</body>
+</html>

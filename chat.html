@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat</title>
+    <link rel="stylesheet" href="chat.css">
+    <script
+            src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+            crossorigin="anonymous"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-database.js"></script>
+    <script src = "config.js"></script>
+
+    <script src="dropdownFooter.js"></script>
+
+    <script src="chat.js"></script>
+
+
+</head>
+<body>
+
+
+<div id="cdropdown">
+    <div id="cdropdown-content"></div>
+</div>
+
+
+<div class="chatbox" id="chatbox" style="visibility: hidden">
+    <h1 id="chattingUser"></h1>
+    <div id="rect" class="rect"></div>
+    <input class="chatInp" id="textInp">
+    <button id = "sendButton" class="chatInp" onclick="sendChat()">Send</button>
+</div>
+
+
+
+</body>
+</html>

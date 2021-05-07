@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>User List</title>
+    <link rel="stylesheet" href="home.css">
+
+        <script
+                src="https://code.jquery.com/jquery-3.5.1.js"
+                integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+                crossorigin="anonymous"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-database.js"></script>
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="859063326524-i104bft5cv439l78ic5j5dhpvopjblem.apps.googleusercontent.com">
+    <script async
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-1DY6kjDBbwEZ12uOYmRwcI1MGyPzirM&libraries=distance_matrix,places">
+    </script>
+
+    <script src = "config.js"></script>
+
+    <script src="dropdownFooter.js"></script>
+
+    <script src="home.js">
+    </script>
+    <script>
+        if(localStorage["id"] && localStorage["name"] && localStorage["email"]) {
+            setID();
+        }else{
+            window.open ('index.html','_self');
+        }
+    </script>
+</head>
+<body>
+
+
+
+
+
+
+<div id="listView" style="display:block">
+    <p>Search for student</p>
+    <div id="studentList">
+    </div>
+</div>
+
+
+</body>
+</html>
+

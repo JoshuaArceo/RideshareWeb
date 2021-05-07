@@ -1,0 +1,69 @@
+#cdropdown-content {
+    display: block;
+    /*position: relative;*/
+    background-color: #f1f1f1;
+    min-width: 160px;
+    max-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: -1;
+    cursor: pointer;
+}
+
+#cdropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+#cdropdown-content a:hover {background-color: #ddd}
+
+.chatbox{
+    position: relative;
+    min-width: 1200px;
+    /*top:  ;*/
+    display:inline-block;
+    min-height: 600px;
+}
+.chatInp{
+    position: absolute;
+    bottom: 0px;
+    /*left:600px*/
+}
+
+#textInp{
+    left:0;
+    width: 800px;
+}
+
+#sendButton{
+    position: absolute;
+    left: 810px;
+}
+
+.rect{
+    overflow: auto;
+    width: 1000px;
+    max-height: 500px;
+    height: 500px;
+    bottom: 25px;
+    position: absolute;
+    background-color: #d3d3d3;
+}
+
+.nString{
+    font-size: 20px;
+
+}
+
+.mString{
+    font-size: 20px;
+
+}
+.tString{
+    margin-right: 10px;
+    display: block;
+    font-size: 15px;
+    text-align: right;
+
+}

@@ -1,0 +1,47 @@
+.postRequest{
+    border-radius: 25px;
+    background: lightgrey;
+    padding: 20px;
+    width: 75%;
+    height: 200px;
+}
+#postText{
+    resize: none;
+    width: 100%;
+    height: 80%;
+}
+
+.canDrive{
+    visibility: hidden;
+}
+
+
+.postedMessage{
+    border-radius: 25px;
+    background: lightgrey;
+    padding: 10px;
+    width: 75%;
+    margin-top: 10px;
+}
+
+.postUserName{
+    margin-bottom: 0;
+}
+
+.space{
+    height: 10px;
+}
+
+.offerText{
+    font-size: 24px;
+}
+.offerButton{
+    margin-left: 10px;
+    background-color: #808080;
+    color: white;
+    padding: 5px 5px;
+    font-size: 16px;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
