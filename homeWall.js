@@ -168,7 +168,6 @@ function loadPosts(sortMethod){
         for (const item of posts) {
             //console.log(item);
             if (item.UserID != idV) {
-                console.log(item.UserID)
                await firebase.database().ref('Conant/Students/' + item.UserID + '/Distances/D' + idV).once('value', function(snapshot){
                     item.MilesVal = snapshot.val().MilesVal
                     item.Miles = snapshot.val().Miles
