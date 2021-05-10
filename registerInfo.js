@@ -50,8 +50,11 @@ var addresses = [];
 var addressDists = [];
 var addressTimes = [];
 let schoolID = 'Conant';
+let calls = 0;
 
 async function getDist(origin, dest){
+    calls++
+    console.log(calls)
     var service = new google.maps.DistanceMatrixService();
     service.getDistanceMatrix({
         origins: [origin],

@@ -15,26 +15,26 @@ const options = {
     strictBounds: false,
     // types: ["postal_town"],
 };
-const autocomplete = new google.maps.places.Autocomplete(input, options);
+new google.maps.places.Autocomplete(input, options);
 
 
-function fillInAddress() {
-    // Get the place details from the autocomplete object.
-    const place = autocomplete.getPlace();
-
-    for (const component in componentForm) {
-        document.getElementById(component).value = "";
-        document.getElementById(component).disabled = false;
-    }
-
-    // Get each component of the address from the place details,
-    // and then fill-in the corresponding field on the form.
-    for (const component of place.address_components) {
-        const addressType = component.types[0];
-
-        if (componentForm[addressType]) {
-            const val = component[componentForm[addressType]];
-            document.getElementById(addressType).value = val;
-        }
-    }
-}
+// function fillInAddress() {
+//     // Get the place details from the autocomplete object.
+//     const place = autocomplete.getPlace();
+//
+//     for (const component in componentForm) {
+//         document.getElementById(component).value = "";
+//         document.getElementById(component).disabled = false;
+//     }
+//
+//     // Get each component of the address from the place details,
+//     // and then fill-in the corresponding field on the form.
+//     for (const component of place.address_components) {
+//         const addressType = component.types[0];
+//
+//         if (componentForm[addressType]) {
+//             const val = component[componentForm[addressType]];
+//             document.getElementById(addressType).value = val;
+//         }
+//     }
+// }
