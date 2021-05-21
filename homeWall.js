@@ -104,31 +104,34 @@ function post() {
         //console.log("can drive")
         availableSeats = $('#seatsDrop').val();
         takenSeats = 0;
-        firebase.database().ref("Conant/Posts").push({
-                UserID: idV,
-                UserName: nameV,
-                PostText: postText,
-                PostedTime: postedTime,
-                DriveTime: driveTime,
-                AvailableSeats: parseInt(availableSeats),
-                TakenSeats: takenSeats,
-                PostType: "1"
-            }
-        );
+        post = {
+            UserID: idV,
+            UserName: nameV,
+            PostText: postText,
+            PostedTime: postedTime,
+            DriveTime: driveTime,
+            AvailableSeats: parseInt(availableSeats),
+            TakenSeats: takenSeats,
+            PostType: "1"
+        }
+
     }
     //need ride
     else {
-        //console.log("need ride")
-        firebase.database().ref("Conant/Posts").push({
-                UserID: idV,
-                UserName: nameV,
-                PostText: postText,
-                PostedTime: postedTime,
-                DriveTime: driveTime,
-                PostType: "0"
-            }
-        );
+        post = {
+            UserID: idV,
+            UserName: nameV,
+            PostText: postText,
+            PostedTime: postedTime,
+            DriveTime: driveTime,
+            PostType: "0"
+        }
     }
+    firebase.database().ref("Conant/Posts").push(
+        post
+    );
+    posts.push(post)
+
     $(`#postText`).val('');
     $(`#timeSelect`).val('07:00');
     $("#seatsDrop").val('1');
@@ -310,11 +313,18 @@ function loadPosts(sortMethod){
 function reqButtons(){
         var index = 0;
         posts.forEach(function (item) {
-            console.log(item)
+            // console.log(item)
             postType = item.PostType;
             //console.log(index)
             if(item.UserID!==idV){
-                checkReq(item,index, postType)
+                if(item.AvailableSeats-item.TakenSeats<1){
+                    $txt = $("<div>This ride is full</div>").prop({
+                        class: 'offerText'
+                    });
+                    $('<div>').append($txt).appendTo($('.postedMessage')[index])
+                }else {
+                    checkReq(item, index, postType)
+                }
             }
             index++;
         });
