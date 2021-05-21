@@ -72,6 +72,11 @@ async function callback(response, status) {
         console.log("destinations:")
         console.log(destinations)
         console.log(response)
+        if(response.originAddresses[0]===""){
+            $("#addressbox").after('<p>Please enter a valid address</p>')
+            console.log("false")
+            return;
+        }
         results = response.rows[0].elements;
         for(var i = 0; i<destinations.length; i++){
             addressDists.push(results[i].distance);
